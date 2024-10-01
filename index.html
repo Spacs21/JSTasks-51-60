@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tsikllari</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video id="background-video" autoplay loop muted>
+            <source src="assets/mylivewallpapers-com-Vinland-Saga-4K.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content">
+        <h1>JavaScript Masalalar</h1>
+        <section class="intro">
+            <audio src="assets/Sn7pE6tJINvi.128.mp3" autoplay loop controls>
+                Your browser does not support the <code>audio</code> element.
+            </audio>
+            <h2>51-60 + qo'shimchalar</h2>
+        </section>
+        <div class="sections">
+            <section id="for-loops" class="loops">
+                <div class="task">
+                    <h3>51-masala</h3>
+                    <p><strong>Masala:</strong>array ichidagi o’rtadagi sonni topadigan function tuzing 
+                      Input: arr = [1,2,3,4,5] middleNumber = 3
+                      Input arr = [1,2,3,4] middleNumber = 2.5 o’rtadagi 2 ta sonning o’rta arifmetigi</p>
+                    <pre><code>
+function middleNum(arr){
+  let middle = Math.round(arr.length / 2 -1)
+  let pastMiddle = Math.round(arr.length / 2)
+  let total = (arr[middle] + arr[pastMiddle]) / 2
+  if(arr.length % 2 !== 0){
+      return arr[middle]
+  }else{
+      return total
+  }
+}
+console.log(middleNum([1,2,3,4,5,6]));
+</code></pre>
+                </div>
+
+                <div class="task">
+                    <h3>52 - masala</h3>
+                    <p>Id si 4 bo'lgan productni o'chiruvchi dastur yozing. (filter)
+                      let products = [
+                      {id: 6,name: "Smarthpone", price: 12000, rating: 4.5, discount: 20},
+                      {id: 2,name: "Acer", price: 12000, rating: 4.3, discount: 10},
+                      {id: 1,name: "Mac book", price: 17000, rating: 4.7, discount: 40},
+                      {id: 4,name: "HP", price: 21000, rating: 4.1, discount: 16},
+                      ];</p>
+                    <pre><code>
+let products = [
+{id: 6, name: "Smartphone", price: 12000, rating: 4.5, discount: 20},
+{id: 2, name: "Acer", price: 12000, rating: 4.3, discount: 10},
+{id: 1, name: "Mac book", price: 17000, rating: 4.7, discount: 40},
+{id: 4, name: "HP", price: 21000, rating: 4.1, discount: 16},
+];
+let filteredProducts = products.filter(product => product.id !==4)
+console.log(filteredProducts);</code></pre>
+                </div>
+
+                <div class="task">
+                    <h3>53 masala</h3>
+                    <p><strong>Masala:</strong> Berilgan stringni faqatgina harflardan iborat ekanligiga tekshiring </p>
+                    <pre><code>
+function checkIfNum(str){
+
+let letters = /^[A-Za-z]+$/
+
+let testing = letters.test(str)
+
+if(testing == true){
+return `"${str}" stringda faqat hariflar!`
+}else{
+return `"${str}" stringda son bor!`
+}
+}
+console.log(checkIfNum("salom"));
+console.log(checkIfNum("salom1"));
+</code></pre>
+                </div>
+
+                <div class="task">
+                    <h3>54 masala</h3>
+                    <p><strong>Masala:</strong> Arraydagi bir xil so’zlar sonini hosil qiluvchi obyekt yarating
+                      Input: const animals = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit'];
+                      Output: {dog: 2, chicken: 3, cat: 1, rabbit: 1}</p>
+                    <pre><code>
+const animals = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit'];
+
+function countAnimals(arr){
+let count = {}
+
+arr.forEach(animal => {
+count[animal] = (count[animal] || 0) + 1
+});
+
+return count
+}
+
+console.log(countAnimals(animals));
+
+</code></pre>
+                </div>
+
+                <div class="task">
+                    <h3>55 masala</h3>
+                    <p><strong>Masala:</strong> String berilgan. Stringdagi so'zlar uzunligidan iborat bo'lgan array qaytaring. (split, map)
+                      Input: "Hello world"
+                      Outpu: [3, 9, 12]</p>
+                    <pre><code>
+function getLength(str){
+return str.split(' ').map(word => word.length)
+}
+console.log(getLength("Hello World"));
+                </div>
+
+                <div class="task">
+                    <h3>56 masala</h3>
+                    <p><strong>Masala:</strong> Stringni bo'sh joy bor yoki yo'qligini tekshiring. (split, some)
+                      Input: "salom dunyo"
+                      Output: true</p>
+                    <pre><code>
+function checkSpace(str){
+return str.split('').some(char => char === ' ')
+}
+console.log(checkSpace("salom dunyo"));
+
+</code></pre>
+                </div>
+                </div>
+                <div class="box" style="background-color: rgba(0, 255, 170, 0.418); border-radius: 30px;">
+                  <p><strong style="color: rgb(255, 255, 255); font-size: 20px;">qolgan masalalarni bu yerga qoyishga ulgurmadim, umumiy 18 ta masala bajardim hammasini outputi consolda</strong></p>
+            </section>
+                </div>
+                
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

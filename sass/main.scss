@@ -1,0 +1,56 @@
+@import "instruction";
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    background: red;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #333; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+  $primary-color: #3498db;
+$button-hover-color: #2980b9;
+$player-bg: #f1f1f1;
+$button-bg: #fff;
+$button-border: #ddd;
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+
+    audio {
+        display: none; // Hide the default audio player
+    }
+
+    #stop-button {
+        background-color: $button-hover-color;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $button-bg;
+            color: $primary-color;
+        }
+    }
+}
